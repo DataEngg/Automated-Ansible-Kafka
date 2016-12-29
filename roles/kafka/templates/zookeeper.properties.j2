@@ -1,0 +1,9 @@
+dataDir=/root/zookeeper
+# the port at which the clients will connect
+clientPort=2181
+# disable the per-ip limit on the number of connections since this is a non-production config
+maxClientCnxns=0
+initLimit=5
+syncLimit=2
+server.1={{ kafka1 }}:2888:3888
+server.2={{ kafka2 }}:2888:3888

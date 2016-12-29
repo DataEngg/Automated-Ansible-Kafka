@@ -1,0 +1,9 @@
+kill timeout 300
+start on runlevel [2345]
+stop on runlevel [06]
+script
+    KAFKA_HOME=/root/kafka_2.10-0.9.0.0
+    nohup $KAFKA_HOME/bin/zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties > /root/zookeeper.log 2>&1 &
+    sleep 30
+    nohup $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties > /root/kafka.log 2>&1 &
+end script

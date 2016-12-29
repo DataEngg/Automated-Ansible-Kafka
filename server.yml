@@ -1,0 +1,8 @@
+---
+- name: Install Kafka in multiple Nodes
+  hosts: all
+  remote_user: root
+  become: yes
+  tags: kafka
+  roles:
+        - kafka
